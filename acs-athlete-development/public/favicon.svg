@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <path d="M32 4 55 12v18c0 14-9 24-23 30C18 54 9 44 9 30V12z" fill="#590926" stroke="#b9b9bb" stroke-width="3"/>
+  <path d="M32 14v34M23 22l9-8 9 8M24 40h16" fill="none" stroke="#f6f4f5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="32" y="37" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" font-weight="700" fill="#fff">ACS</text>
+</svg>

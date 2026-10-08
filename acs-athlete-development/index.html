@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#590926">
+  <meta name="description" content="ACS athlete training and performance tracker">
+  <title>ACS Athlete Development</title>
+  <link rel="icon" type="image/svg+xml" href="/public/favicon.svg">
+  <link rel="stylesheet" href="/src/styles.css">
+  <link rel="stylesheet" href="/src/overrides.css">
+</head>
+<body>
+  <section id="auth-screen" class="auth-screen" aria-live="polite">Connecting…</section>
+  <div class="app-frame" id="app-shell" hidden>
+    <header class="topbar">
+      <div class="brand-lockup">
+        <div class="brand-mark" aria-label="ACS shield mark"><span>ACS</span></div>
+        <div><p class="brand-kicker">Aberdeen Christian</p><h1>Athlete Development</h1></div>
+      </div>
+      <div class="top-actions">
+        <span id="account-label" class="small"></span>
+        <button class="button button-small button-quiet" id="manage-account">Create account</button>
+        <button class="button button-small button-quiet" id="change-password">Password</button>
+        <button class="button button-small button-quiet" id="refresh-data">Refresh shared data</button>
+        <button class="button button-small button-quiet" id="sign-out">Sign out</button>
+        <button class="icon-button" id="export-data" title="Export a backup" aria-label="Export a backup">⇧</button>
+      </div>
+    </header>
+
+    <div class="workspace">
+      <aside class="sidebar" aria-label="Main navigation">
+        <div class="sidebar-label">Workspace</div>
+        <nav id="main-nav">
+          <button class="nav-item is-current" data-page="home"><span class="nav-symbol">⌂</span>Overview</button>
+          <button class="nav-item" data-page="athletes"><span class="nav-symbol">♙</span>Athletes</button>
+          <button class="nav-item" data-page="training"><span class="nav-symbol">▤</span>Training</button>
+          <button class="nav-item" data-page="performance"><span class="nav-symbol">↗</span>Performance</button>
+          <button class="nav-item" data-page="leaderboard"><span class="nav-symbol">★</span>Leaderboards</button>
+          <button class="nav-item" data-page="history"><span class="nav-symbol">◷</span>Past records</button>
+        </nav>
+        <div class="sidebar-bottom">
+          <div class="sync-card"><span class="sync-dot"></span><div><strong>Team database</strong><small id="sync-status" role="status">Connecting…</small></div></div>
+          <button class="text-button" id="migrate-local">Copy old local data</button>
+          <button class="text-button" id="import-shortcut">Import records</button>
+        </div>
+      </aside>
+
+      <main id="app-main" tabindex="-1">
+        <div class="loading-line" aria-live="polite">Loading your workspace…</div>
+      </main>
+    </div>
+  </div>
+
+  <dialog id="modal" class="modal"></dialog>
+  <input id="file-input" type="file" accept=".json,.csv,application/json,text/csv" hidden>
+  <script type="module" src="/src/app.js"></script>
+</body>
+</html>
